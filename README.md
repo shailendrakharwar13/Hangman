@@ -1,1 +1,1 @@
-# Hangman- This is a simple program on implementation of Famous vintage computer game Hangman. Random functions are used int the program.
+This is a simple program on implementation of Famous vintage computer game Hangman. Random functions are used int the program.
