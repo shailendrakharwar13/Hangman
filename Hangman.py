@@ -1,16 +1,16 @@
 import random 
 from collections import Counter 
   
-someWords = '''apple banana mango strawberry  
+words = '''apple banana mango strawberry  
 orange grape pineapple apricot lemon coconut watermelon 
 cherry papaya berry peach lychee muskmelon'''
   
-someWords = someWords.split(' ') 
+words = words.split(' ') 
 
-word = random.choice(someWords)          
+word = random.choice(words)          
   
 if __name__ == '__main__': 
-    print('Guess the word! HINT: word is a name of a fruit') 
+    print('Guess the word! HINT: The word is name of a fruit') 
       
     for i in word: 
          
@@ -29,7 +29,7 @@ if __name__ == '__main__':
             chances -= 1
   
             try: 
-                guess = str(input('Enter a letter to guess: ')) 
+                guess = str(input('Enter letter to guess: ')) 
             except: 
                 print('Enter only a letter!') 
                 continue
@@ -42,7 +42,7 @@ if __name__ == '__main__':
                 print('Enter only a SINGLE letter') 
                 continue
             elif guess in letterGuessed: 
-                print('You have already guessed that letter') 
+                print('You have correctly guessed that letter') 
                 continue
   
   
@@ -79,5 +79,5 @@ if __name__ == '__main__':
   
     except KeyboardInterrupt: 
         print() 
-        print('Bye! Try again.') 
+        print('OK Bye! Try again.') 
         exit() 
