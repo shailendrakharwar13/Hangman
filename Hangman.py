@@ -1,4 +1,3 @@
-
 import random 
 from collections import Counter 
   
@@ -19,7 +18,7 @@ if __name__ == '__main__':
     print() 
   
     playing = True
-     # list for storing the letters guessed by the player 
+     
     letterGuessed = ''                 
     chances = len(word) + 2
     correct = 0
@@ -35,7 +34,7 @@ if __name__ == '__main__':
                 print('Enter only a letter!') 
                 continue
   
-            # Validation of the guess 
+           
             if not guess.isalpha(): 
                 print('Enter only a LETTER') 
                 continue
@@ -65,8 +64,8 @@ if __name__ == '__main__':
                     print(word) 
                     flag = 1
                     print('Congratulations, You won!') 
-                    break # To break out of the for loop 
-                    break # To break out of the while loop 
+                    break 
+                    break
                 else: 
                     print('_', end = ' ') 
   
