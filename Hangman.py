@@ -1,40 +1,41 @@
+
 import random 
 from collections import Counter 
   
-words = '''apple banana mango strawberry  
+someWords = '''apple banana mango strawberry  
 orange grape pineapple apricot lemon coconut watermelon 
 cherry papaya berry peach lychee muskmelon'''
   
-words = words.split(' ') 
-
-word = random.choice(words)          
+someWords = someWords.split(' ') 
+ 
+word = random.choice(someWords)          
   
 if __name__ == '__main__': 
-    print('Guess the word! HINT: The word is name of a fruit') 
+    print('Guess the word! HINT: word is a name of a fruit') 
       
     for i in word: 
-         
+          
         print('_', end = ' ')         
     print() 
   
     playing = True
-      
+     # list for storing the letters guessed by the player 
     letterGuessed = ''                 
     chances = len(word) + 2
     correct = 0
     flag = 0
     try: 
-        while (chances != 0) and flag == 0:   
+        while (chances != 0) and flag == 0:  
             print() 
             chances -= 1
   
             try: 
-                guess = str(input('Enter letter to guess: ')) 
+                guess = str(input('Enter a letter to guess: ')) 
             except: 
                 print('Enter only a letter!') 
                 continue
   
-            
+            # Validation of the guess 
             if not guess.isalpha(): 
                 print('Enter only a LETTER') 
                 continue
@@ -42,30 +43,30 @@ if __name__ == '__main__':
                 print('Enter only a SINGLE letter') 
                 continue
             elif guess in letterGuessed: 
-                print('You have correctly guessed that letter') 
+                print('You have already guessed that letter') 
                 continue
   
   
-           
+             
             if guess in word: 
                 k = word.count(guess)  
                 for _ in range(k):     
-                    letterGuessed += guess  
+                    letterGuessed += guess 
   
             
             for char in word: 
                 if char in letterGuessed and (Counter(letterGuessed) != Counter(word)): 
                     print(char, end = ' ') 
                     correct += 1
-               
+                 
                 elif (Counter(letterGuessed) == Counter(word)):   
                                                                  
                     print("The word is: ", end=' ') 
                     print(word) 
                     flag = 1
                     print('Congratulations, You won!') 
-                    break 
-                    break  
+                    break # To break out of the for loop 
+                    break # To break out of the while loop 
                 else: 
                     print('_', end = ' ') 
   
@@ -79,5 +80,5 @@ if __name__ == '__main__':
   
     except KeyboardInterrupt: 
         print() 
-        print('OK Bye! Try again.') 
+        print('Bye! Try again.') 
         exit() 
